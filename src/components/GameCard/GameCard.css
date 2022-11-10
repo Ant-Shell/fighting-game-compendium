@@ -1,0 +1,12 @@
+img {
+  height: 15em;
+  width: 20em;
+}
+
+.card {
+  text-align: center;
+  color: #F8F9FA;
+  width: 20em;
+  height: 18em;
+  background-color: #212529;
+}
