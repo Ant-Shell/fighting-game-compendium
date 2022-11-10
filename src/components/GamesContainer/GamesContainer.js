@@ -15,7 +15,7 @@ const GamesContainer = ({ fightingGames }) => {
   })
 
   return(
-    <div>
+    <div className='games-container'>
       {fightingGamesList}
     </div>
   )

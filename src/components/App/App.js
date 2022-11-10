@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom'
 import GamesContainer from '../GamesContainer/GamesContainer';
 import './App.css';
 
@@ -13,10 +14,14 @@ const App = () => {
   return(
     <main>
       {/* <Header />  */}
-      <GamesContainer fightingGames={fightingGames}/>
-      {/* SingleGame */}
+      <Switch>
+        <Route exact path="/" render={()=> <GamesContainer fightingGames={fightingGames}/>} />
+        {/* SingleGame */}
+        {/* LoadingPage /> */}
+        {/* ErrorPage /> */}
+        {/* InvalidLink /> */}
+      </Switch>
       {/* Footer /> */}
-      {/* ErrorPage /> */}
     </main>
   )
 }
