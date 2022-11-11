@@ -9,7 +9,6 @@ const App = () => {
   const [fightingGames, setFightingGames] = useState([])
   const [errorMessage, setErrorMessage] = useState('')
 
-
   useEffect(() => {
     setErrorMessage('')
     Promise.all(
