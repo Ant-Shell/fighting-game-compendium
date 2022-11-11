@@ -10,9 +10,32 @@ const App = () => {
 
 
   useEffect(() => {
-    setFightingGames([{name: "Street Fighter 6", background_image: "https://media.rawg.io/media/games/ce2/ce2463db40cec363f360c29ddcc56884.jpg", id: 742771}])
-    Promise.all([getGames('street-fighter-6'), getGames('super-smash-bros-ultimate')])
-    .then(data => console.log(data))
+    Promise.all(
+        [
+          getGames('street-fighter-6'),
+          getGames('super-smash-bros-ultimate'),
+          getGames('guilty-gear-2020'),
+          getGames('tekken-7'),
+          getGames('multiversus'),
+          getGames('brawlhalla'),
+          getGames('street-fighter-v'),
+          getGames('dragon-ball-fighterz'),
+          getGames('the-king-of-fighters-xv'),
+          getGames('melty-blood-type-lumina'),
+          getGames('dnf-duel'),
+          getGames('blazblue-centralfiction'),
+          getGames('granblue-fantasy-versus'),
+          getGames('ultimate-marvel-vs-capcom-3'),
+          getGames('skullgirls-2nd-encore'),
+          getGames('soulcalibur-vi'),
+          getGames('virtua-fighter-5-final-showdown'),
+          getGames('marvel-vs-capcom-2-new-age-of-heroes'),
+          getGames('street-fighter-iii-3rd-strike'),
+          getGames('super-smash-bros-melee-2001'),
+        ]
+      )
+    .then(dataObject => setFightingGames(dataObject))
+    .catch(errorMessage => console.log("UseEffect catch:", errorMessage))
   }, [])
 
   return(
