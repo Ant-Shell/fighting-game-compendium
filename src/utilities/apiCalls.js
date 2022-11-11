@@ -1,6 +1,6 @@
 const API_KEY = process.env.REACT_APP_API_KEY
 
-const getGames = async (id) => {
+const getGames = async (id, errorHandler) => {
   const singleFightingGameURL = `https://api.rawg.io/api/games/${id}?key=${API_KEY}`
 
   try {
@@ -9,6 +9,7 @@ const getGames = async (id) => {
         console.log(response.status)
         throw new Error(response.status)
     }
+
     const data = await response.json()
     const { id, name, description, metacritic, released, background_image, website,
           platforms, developers, publishers, esrb_rating } = data
@@ -28,10 +29,9 @@ const getGames = async (id) => {
 
     return dataObject
 }
+
 catch (error) {
-    console.log(error.message)
-    const errorMessage = error.message
-    return (errorMessage)
+  errorHandler(error.message)
   }
 }
 
