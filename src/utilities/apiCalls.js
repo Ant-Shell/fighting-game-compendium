@@ -10,11 +10,28 @@ const getGames = async (id) => {
         throw new Error(response.status)
     }
     const data = await response.json()
-    return data
+    const { id, name, description, metacritic, released, background_image, website,
+          platforms, developers, publishers, esrb_rating } = data
+    const dataObject = {
+      id: id,
+      name: name,
+      description: description,
+      metacritic: metacritic,
+      released: released,
+      background_image: background_image,
+      website: website,
+      platforms: platforms,
+      developers: developers,
+      publishers: publishers,
+      esrb_rating: esrb_rating
+    }
+
+    return dataObject
 }
 catch (error) {
     console.log(error.message)
-    return (error.message)
+    const errorMessage = error.message
+    return (errorMessage)
   }
 }
 
