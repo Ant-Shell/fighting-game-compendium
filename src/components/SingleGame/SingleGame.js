@@ -25,31 +25,33 @@ const SingleGame = () => {
   }, [])
 
 
-  // const listedInfoGetter1 = (listedInfo) => {
-  //   const listedInfoMapper = listedInfo.reduce((acc, info) => {
-  //     if (acc.length > 1) {
-  //       acc = acc + ', ' + listedInfo.name
-  //     } else {
-  //       acc = listedInfo.name
-  //     }
-  //     return acc
-  //   }, '')
-  // }
+  const listedInfoGetter1 = (listedInfo) => {
+    const listedInfoMapper = listedInfo.reduce((acc, info) => {
+      if (acc.length > 1) {
+        acc = acc + ', ' + info.name
+      } else {
+        acc = info.name
+      }
+      return acc
+    }, '')
+    return listedInfoMapper
+  }
 
-  // const listedInfoGetter2 = (listedInfo) => {
-  //   const listedInfoMapper = listedInfo.reduce((acc, info) => {
-  //     if (acc.length > 1) {
-  //       acc = acc + ', ' + listedInfo.platform.name
-  //     } else {
-  //       acc = listedInfo.platform.name
-  //     }
-  //     return acc
-  //   }, '')
-  // }
+  const listedInfoGetter2 = (listedInfo) => {
+    const listedInfoMapper = listedInfo.reduce((acc, info) => {
+      if (acc.length > 1) {
+        acc = acc + ', ' + info.platform.name
+      } else {
+        acc = info.platform.name
+      }
+      return acc
+    }, '')
+    return listedInfoMapper
+  }
 
     const singleGameList = gameInfo.map(info => {
-      const { id, name, description_raw, metacritic, released,
-        esrb_rating, website} = info
+      const { id, name, description_raw, metacritic, released, developers, platforms,
+        publishers, esrb_rating, website} = info
       return (
         <div className="game-info-container" key={id}>
           <SingleGameCard
@@ -57,10 +59,10 @@ const SingleGame = () => {
           description={description_raw}
           metacritic={metacritic}
           released={released}
-          // platforms={platforms}
-          esrb_rating={esrb_rating}
-          // developers={developers}
-          // publishers={publishers}
+          platforms={listedInfoGetter2(platforms)}
+          esrb_rating={esrb_rating[Object.keys(esrb_rating)]}
+          developers={listedInfoGetter1(developers)}
+          publishers={listedInfoGetter1(publishers)}
           website={website}
           key={id}
           />
