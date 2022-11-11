@@ -13,6 +13,7 @@ const getGames = async (id, errorHandler) => {
     const data = await response.json()
     const { id, name, description, metacritic, released, background_image, website,
           platforms, developers, publishers, esrb_rating } = data
+
     const dataObject = {
       id: id,
       name: name,
