@@ -11,7 +11,7 @@ const SingleGame = () => {
       {
         id: 742771,
         name: 'Street Fighter 6',
-        description_raw: `A new era for fighting games begins in 2023!\n\nThe evolution of fighting games starts with our traditional Fighting Ground,\nand then we're turning the genre on its head with World Tour and Battle Hub for a total of three modes where anyone can play to their liking.\nNo one starts off as a champion. You get there step by step, punch by punch.\nTake up the challenge and bring your game to the next level.`,
+        description_raw: "A new era for fighting games begins in 2023!\n\nThe evolution of fighting games starts with our traditional Fighting Ground,\nand then we're turning the genre on its head with World Tour and Battle Hub for a total of three modes where anyone can play to their liking.\nNo one starts off as a champion. You get there step by step, punch by punch.\nTake up the challenge and bring your game to the next level.",
         metacritic: 8.0,
 	      released: '2023-02-15',
         background_image: 'https://media.rawg.io/media/games/ce2/ce2463db40cec363f360c29ddcc56884.jpg',
