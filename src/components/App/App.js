@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import GamesContainer from '../GamesContainer/GamesContainer';
+import SingleGame from '../SingleGame/SingleGame'
 import './App.css';
 
 const App = () => {
@@ -16,10 +17,10 @@ const App = () => {
       {/* <Header />  */}
       <Switch>
         <Route exact path="/" render={()=> <GamesContainer fightingGames={fightingGames}/>} />
-        {/* SingleGame */}
-        {/* LoadingPage /> */}
-        {/* ErrorPage /> */}
-        {/* InvalidLink /> */}
+        <Route path="/:id" render={({ match }) => <SingleGame />} />
+        {/* <LoadingPage /> */}
+        {/* <ErrorPage /> */}
+        {/* <InvalidLink /> */}
       </Switch>
       {/* Footer /> */}
     </main>
