@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom'
+import { getGames } from "../../utilities/apiCalls"
 import GamesContainer from '../GamesContainer/GamesContainer';
 import SingleGame from '../SingleGame/SingleGame'
 import './App.css';
@@ -10,6 +11,8 @@ const App = () => {
 
   useEffect(() => {
     setFightingGames([{name: "Street Fighter 6", background_image: "https://media.rawg.io/media/games/ce2/ce2463db40cec363f360c29ddcc56884.jpg", id: 742771}])
+    Promise.all([getGames('street-fighter-6'), getGames('super-smash-bros-ultimate')])
+    .then(data => console.log(data))
   }, [])
 
   return(
