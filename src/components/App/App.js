@@ -7,12 +7,14 @@ import './App.css';
 
 const App = () => {
   const [fightingGames, setFightingGames] = useState([])
+  const [errorMessage, setErrorMessage] = useState('')
 
 
   useEffect(() => {
+    setErrorMessage('')
     Promise.all(
         [
-          getGames('street-fighter-6'),
+          getGames('street-fighter-6', setErrorMessage),
           getGames('super-smash-bros-ultimate'),
           getGames('guilty-gear-2020'),
           getGames('tekken-7'),
@@ -35,12 +37,12 @@ const App = () => {
         ]
       )
     .then(dataObject => setFightingGames(dataObject))
-    .catch(errorMessage => console.log("UseEffect catch:", errorMessage))
   }, [])
 
   return(
     <main>
       {/* <Header />  */}
+      {errorMessage && <p>Sorry, a {errorMessage} error has occured :(</p>}  {/* <ErrorPage /> */}
       <Switch>
         <Route exact path="/" render={()=> <GamesContainer fightingGames={fightingGames}/>} />
         <Route path="/:id" render={({ match }) => <SingleGame />} />
