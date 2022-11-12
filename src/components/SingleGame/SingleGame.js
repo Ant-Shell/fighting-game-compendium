@@ -1,29 +1,17 @@
 import { useEffect, useState } from "react";
+import { getGames } from "../../utilities/apiCalls"
 import SingleGameCard from "../SingleGameCard/SingleGameCard"
 import "./SingleGame.css"
 
-const SingleGame = () => {
-  const [gameInfo, setGameInfo] = useState([])
-
+const SingleGame = ({ id }) => {
+  const [fightingGame, setFightingGame] = useState([])
+  const [errorMessage, setErrorMessage] = useState('')
 
   useEffect(() => {
-    setGameInfo([
-      {
-        id: 742771,
-        name: 'Street Fighter 6',
-        description_raw: "A new era for fighting games begins in 2023!\n\nThe evolution of fighting games starts with our traditional Fighting Ground,\nand then we're turning the genre on its head with World Tour and Battle Hub for a total of three modes where anyone can play to their liking.\nNo one starts off as a champion. You get there step by step, punch by punch.\nTake up the challenge and bring your game to the next level.",
-        metacritic: 8.0,
-	      released: '2023-02-15',
-        background_image: 'https://media.rawg.io/media/games/ce2/ce2463db40cec363f360c29ddcc56884.jpg',
-        website: 'https://www.streetfighter.com/6/',
-	      platforms: [{platform: {name: "PlayStation 5"}}, {platform: {name: "PlayStation 4"}}],
-	      developers: [{name: 'Capcom'}, {name: 'Capcom U.S.A.'}],
-	      publishers: [{name: 'Capcom'}],
-	      esrb_rating: {name: 'Teen'}
-      }
-    ])
+    setErrorMessage('')
+    getGames(id)
+    .then(dataObject => setFightingGame([dataObject]))
   }, [])
-
 
   const listedInfoGetter1 = (listedInfo) => {
     const listedInfoMapper = listedInfo.reduce((acc, info) => {
@@ -49,21 +37,33 @@ const SingleGame = () => {
     return listedInfoMapper
   }
 
-    const singleGameList = gameInfo.map(info => {
-      const { id, name, description_raw, metacritic, released, developers, platforms,
-        publishers, esrb_rating, website} = info
+  const ratingGetter = (listedInfo) => {
+    if(listedInfo === null) {
+      return <p>Please visit <a href="https://www.esrb.org/" target="_blank" rel="noopener noreferrer">esrb.org</a>.</p>
+    }
+
+    return listedInfo.name
+  }
+
+    const singleGameList = fightingGame.map(info => {
+      const { id, name, description_raw, metacritic, released, background_image, background_image_additional,
+        website, platforms, developers, publishers, esrb_rating } = info
+        console.log(esrb_rating.name)
       return (
         <div className="game-info-container" key={id}>
+          {errorMessage && <p>Sorry, a {errorMessage} error has occured :(</p>}
           <SingleGameCard
           name={name}
-          description={description_raw}
+          description_raw={description_raw}
           metacritic={metacritic}
           released={released}
           platforms={listedInfoGetter2(platforms)}
-          esrb_rating={esrb_rating[Object.keys(esrb_rating)]}
+          esrb_rating={ratingGetter(esrb_rating)}
           developers={listedInfoGetter1(developers)}
           publishers={listedInfoGetter1(publishers)}
           website={website}
+          background_image={background_image}
+          background_image_additional={background_image_additional}
           key={id}
           />
         </div>
