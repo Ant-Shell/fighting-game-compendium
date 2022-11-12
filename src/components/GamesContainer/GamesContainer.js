@@ -1,4 +1,5 @@
 import GameCard from "../GameCard/GameCard";
+import SearchBar from "../SearchBar/SearchBar"
 import "./GamesContainer.css"
 
 const GamesContainer = ({ fightingGames }) => {
@@ -18,7 +19,7 @@ const GamesContainer = ({ fightingGames }) => {
   return(
     <section>
       <div className="search-conatainer">
-        <p className="test">Test</p>
+        <SearchBar />
       </div>
       <div className='games-container'>
         {fightingGamesList}
