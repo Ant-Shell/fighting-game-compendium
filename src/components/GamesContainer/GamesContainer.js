@@ -16,9 +16,14 @@ const GamesContainer = ({ fightingGames }) => {
   })
 
   return(
-    <div className='games-container'>
-      {fightingGamesList}
-    </div>
+    <section>
+      <div className="search-conatainer">
+        <p className="test">Test</p>
+      </div>
+      <div className='games-container'>
+        {fightingGamesList}
+      </div>
+    </section>
   )
 }
 

@@ -6,3 +6,13 @@
   height: 50em;
   overflow-y: auto;
 }
+
+.search-conatainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.test {
+  color: white;
+  margin-right: 20vw;
+}
