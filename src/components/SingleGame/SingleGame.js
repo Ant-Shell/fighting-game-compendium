@@ -48,7 +48,6 @@ const SingleGame = ({ id }) => {
     const singleGameList = fightingGame.map(info => {
       const { id, name, description_raw, metacritic, released, background_image, background_image_additional,
         website, platforms, developers, publishers, esrb_rating } = info
-        console.log(esrb_rating.name)
       return (
         <div className="game-info-container" key={id}>
           {errorMessage && <p>Sorry, a {errorMessage} error has occured :(</p>}
