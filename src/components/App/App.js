@@ -42,9 +42,7 @@ const App = () => {
 
   return(
     <main>
-      <section className='page-container'>
         <Header />
-        <div className='content-wrapper'>
           {errorMessage && <p>Sorry, a {errorMessage} error has occured :(</p>}  {/* <ErrorPage /> */}
           <Switch>
             <Route exact path="/" render={()=> <GamesContainer fightingGames={fightingGames}/>} />
@@ -53,9 +51,7 @@ const App = () => {
             {/* <ErrorPage /> */}
             {/* <InvalidLink /> */}
           </Switch>
-        </div>
         <Footer />
-      </section>
     </main>
   )
 }
