@@ -1,0 +1,17 @@
+footer {
+  color: #F8F9FA;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.credits {
+  width: 20vw;
+  display: flex;
+  justify-content: space-around;
+  color: #F8F9FA;
+}
