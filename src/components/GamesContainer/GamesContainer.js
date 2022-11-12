@@ -2,7 +2,7 @@ import GameCard from "../GameCard/GameCard";
 import SearchBar from "../SearchBar/SearchBar"
 import "./GamesContainer.css"
 
-const GamesContainer = ({ fightingGames }) => {
+const GamesContainer = ({ fightingGames, searchForGame }) => {
   const fightingGamesList = fightingGames.map(game => {
     const { name, background_image, id, slug } = game
     return (
@@ -19,7 +19,7 @@ const GamesContainer = ({ fightingGames }) => {
   return(
     <section>
       <div className="search-conatainer">
-        <SearchBar />
+        <SearchBar fightingGames={fightingGames} searchForGame={searchForGame} />
       </div>
       <div className='games-container'>
         {fightingGamesList}
