@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import { getGames } from "../../utilities/apiCalls"
+import Header from "../Header/Header"
 import GamesContainer from '../GamesContainer/GamesContainer';
 import SingleGame from '../SingleGame/SingleGame'
-import Header from "../Header/Header"
+import Footer from '../Footer/Footer';
 import './App.css';
 
 const App = () => {
@@ -41,16 +42,20 @@ const App = () => {
 
   return(
     <main>
-      <Header />
-      {errorMessage && <p>Sorry, a {errorMessage} error has occured :(</p>}  {/* <ErrorPage /> */}
-      <Switch>
-        <Route exact path="/" render={()=> <GamesContainer fightingGames={fightingGames}/>} />
-        <Route exact path="/:slug" render={({ match }) => <SingleGame id={match.params.slug}/>} />
-        {/* <LoadingPage /> */}
-        {/* <ErrorPage /> */}
-        {/* <InvalidLink /> */}
-      </Switch>
-      {/* Footer /> */}
+      <section className='page-container'>
+        <Header />
+        <div className='content-wrapper'>
+          {errorMessage && <p>Sorry, a {errorMessage} error has occured :(</p>}  {/* <ErrorPage /> */}
+          <Switch>
+            <Route exact path="/" render={()=> <GamesContainer fightingGames={fightingGames}/>} />
+            <Route exact path="/:slug" render={({ match }) => <SingleGame id={match.params.slug}/>} />
+            {/* <LoadingPage /> */}
+            {/* <ErrorPage /> */}
+            {/* <InvalidLink /> */}
+          </Switch>
+        </div>
+        <Footer />
+      </section>
     </main>
   )
 }
