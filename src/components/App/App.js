@@ -9,6 +9,7 @@ import './App.css';
 
 const App = () => {
   const [fightingGames, setFightingGames] = useState([])
+  const [searchedGames, setSearchedGames] = useState([])
   const [errorMessage, setErrorMessage] = useState('')
 
   useEffect(() => {
@@ -40,13 +41,18 @@ const App = () => {
     .then(dataObject => setFightingGames(dataObject))
   }, [])
 
+  const searchForGame = (input) => {
+    const locateGame = fightingGames.filter(game => game.name.toUpperCase().includes(input.toUpperCase()))
+    setSearchedGames(locateGame)
+  }
+
   return(
     <main>
         <Header />
         <section>
             {errorMessage && <p>Sorry, a {errorMessage} error has occured :(</p>}  {/* <ErrorPage /> */}
             <Switch>
-              <Route exact path="/" render={()=> <GamesContainer fightingGames={fightingGames}/>} />
+              <Route exact path="/" render={()=> <GamesContainer fightingGames={fightingGames} searchForGame={searchForGame}/>} />
               <Route exact path="/:slug" render={({ match }) => <SingleGame id={match.params.slug}/>} />
               {/* <LoadingPage /> */}
               {/* <ErrorPage /> */}
