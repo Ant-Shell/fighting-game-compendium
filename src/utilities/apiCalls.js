@@ -11,7 +11,7 @@ const getGames = async (id, errorHandler) => {
     }
 
     const data = await response.json()
-    const { id, name, slug, description_raw, metacritic, released, background_image, background_image_additional,
+    const { id, name, slug, description_raw, metacritic, released, background_image,
           website, platforms, developers, publishers, esrb_rating } = data
 
     const dataObject = {
@@ -22,7 +22,6 @@ const getGames = async (id, errorHandler) => {
       metacritic: metacritic,
       released: released,
       background_image: background_image,
-      background_image_additional: background_image_additional,
       website: website,
       platforms: platforms,
       developers: developers,
