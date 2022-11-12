@@ -44,7 +44,7 @@ const App = () => {
       {errorMessage && <p>Sorry, a {errorMessage} error has occured :(</p>}  {/* <ErrorPage /> */}
       <Switch>
         <Route exact path="/" render={()=> <GamesContainer fightingGames={fightingGames}/>} />
-        <Route path="/:id" render={({ match }) => <SingleGame />} />
+        <Route exact path="/:slug" render={({ match }) => <SingleGame id={match.params.slug}/>} />
         {/* <LoadingPage /> */}
         {/* <ErrorPage /> */}
         {/* <InvalidLink /> */}
