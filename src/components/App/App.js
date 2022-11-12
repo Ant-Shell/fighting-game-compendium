@@ -10,6 +10,7 @@ import './App.css';
 const App = () => {
   const [fightingGames, setFightingGames] = useState([])
   const [searchedGames, setSearchedGames] = useState([])
+  const [foundSearchResults, setfoundSearchResults] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
 
   useEffect(() => {
@@ -43,7 +44,14 @@ const App = () => {
 
   const searchForGame = (input) => {
     const locateGame = fightingGames.filter(game => game.name.toUpperCase().includes(input.toUpperCase()))
-    setSearchedGames(locateGame)
+    console.log(locateGame)
+    if(!input || !locateGame.length) {
+      setSearchedGames([])
+      setfoundSearchResults(false)
+    } else {
+      setSearchedGames(locateGame)
+      setfoundSearchResults(true)
+    }
   }
 
   return(
