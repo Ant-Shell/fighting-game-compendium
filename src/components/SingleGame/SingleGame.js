@@ -11,7 +11,7 @@ const SingleGame = ({ id }) => {
     setErrorMessage('')
     getGames(id)
     .then(dataObject => setFightingGame([dataObject]))
-  }, [])
+  }, [id])
 
   const listedInfoGetter1 = (listedInfo) => {
     const listedInfoMapper = listedInfo.reduce((acc, info) => {
@@ -41,17 +41,14 @@ const SingleGame = ({ id }) => {
     if(listedInfo === null) {
       return <p>Please visit <a href="https://www.esrb.org/" target="_blank" rel="noopener noreferrer">esrb.org</a>.</p>
     }
-
     return listedInfo.name
   }
 
     const singleGameList = fightingGame.map(info => {
-      const { id, name, description_raw, metacritic, released, background_image, background_image_additional,
-        website, platforms, developers, publishers, esrb_rating } = info
+      const { id, name, description_raw, metacritic, released, background_image,
+      website, platforms, developers, publishers, esrb_rating } = info
       return (
-        <div className="game-info-container" key={id}>
-          {errorMessage && <p>Sorry, a {errorMessage} error has occured :(</p>}
-          <SingleGameCard
+        <SingleGameCard
           name={name}
           description_raw={description_raw}
           metacritic={metacritic}
@@ -62,17 +59,16 @@ const SingleGame = ({ id }) => {
           publishers={listedInfoGetter1(publishers)}
           website={website}
           background_image={background_image}
-          background_image_additional={background_image_additional}
           key={id}
-          />
-        </div>
+        />
       )
     })
 
   return (
-  <div>
-    {singleGameList}
-  </div>
+    <div className="game-info-container">
+      {errorMessage && <p>Sorry, a {errorMessage} error has occured :(</p>}
+      {singleGameList}
+    </div>
   )
 }
 
