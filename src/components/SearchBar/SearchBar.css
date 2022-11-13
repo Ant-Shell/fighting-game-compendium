@@ -5,3 +5,7 @@ form {
 input {
   width: 10vw;
 }
+
+.error-message {
+  color: #F8F9FA;
+}
