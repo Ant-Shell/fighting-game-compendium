@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import { getGames } from "../../utilities/apiCalls"
 import Header from "../Header/Header"
+import LoadingPage from '../LoadingPage/LoadingPage';
 import GamesContainer from '../GamesContainer/GamesContainer';
 import SingleGame from '../SingleGame/SingleGame'
 import Footer from '../Footer/Footer';
@@ -53,17 +54,22 @@ const App = () => {
     }
   }
 
+  const loadingScreenRender = () => {
+    if(!fightingGames.length && !errorMessage) {
+      return <LoadingPage />
+    }
+  }
+
   return(
     <main>
         <Header />
         <section>
+            {loadingScreenRender()}
             {errorMessage && <p>Sorry, a {errorMessage} error has occured :(</p>}  {/* <ErrorPage /> */}
             <Switch>
               <Route exact path="/" render={()=> <GamesContainer fightingGames={fightingGames}
                 searchedGames={searchedGames} foundSearchResults={foundSearchResults} searchForGame={searchForGame}/>} />
               <Route exact path="/:slug" render={({ match }) => <SingleGame id={match.params.slug}/>} />
-              {/* <LoadingPage /> */}
-              {/* <ErrorPage /> */}
               {/* <InvalidLink /> */}
             </Switch>
           </section>

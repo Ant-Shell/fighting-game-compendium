@@ -39,7 +39,7 @@ const SingleGame = ({ id }) => {
 
   const ratingGetter = (listedInfo) => {
     if(listedInfo === null) {
-      return <p>Please visit <a href="https://www.esrb.org/" target="_blank" rel="noopener noreferrer">esrb.org</a>.</p>
+      return <p>Please visit: <a href="https://www.esrb.org/" target="_blank" rel="noopener noreferrer">esrb.org</a>.</p>
     }
     return listedInfo.name
   }
