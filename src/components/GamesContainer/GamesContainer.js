@@ -2,8 +2,17 @@ import GameCard from "../GameCard/GameCard";
 import SearchBar from "../SearchBar/SearchBar"
 import "./GamesContainer.css"
 
-const GamesContainer = ({ fightingGames, searchForGame }) => {
-  const fightingGamesList = fightingGames.map(game => {
+const GamesContainer = ({ fightingGames, searchForGame, searchedGames, foundSearchResults }) => {
+
+  const listSetter = (bool) => {
+    if (bool === false) {
+      return fightingGames
+    } else {
+      return searchedGames
+    }
+  }
+
+  const fightingGamesList = listSetter(foundSearchResults).map(game => {
     const { name, background_image, id, slug } = game
     return (
       <GameCard
@@ -19,7 +28,7 @@ const GamesContainer = ({ fightingGames, searchForGame }) => {
   return(
     <section>
       <div className="search-conatainer">
-        <SearchBar fightingGames={fightingGames} searchForGame={searchForGame} />
+        <SearchBar fightingGames={fightingGames} searchForGame={searchForGame} foundSearchResults={foundSearchResults}/>
       </div>
       <div className='games-container'>
         {fightingGamesList}
