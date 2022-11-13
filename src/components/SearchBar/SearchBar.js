@@ -1,4 +1,5 @@
 import { useState } from "react"
+import PropTypes from "prop-types"
 import "./SearchBar.css"
 
 const SearchBar = ({ searchForGame, foundSearchResults }) => {
@@ -30,3 +31,12 @@ const SearchBar = ({ searchForGame, foundSearchResults }) => {
 }
 
 export default SearchBar
+
+SearchBar.propTypes = {
+  searchForGame: PropTypes.func.isRequired,
+  foundSearchResults: PropTypes.bool.isRequired,
+}
+
+SearchBar.defaultProps = {
+  foundSearchResults: false
+}

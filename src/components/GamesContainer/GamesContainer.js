@@ -1,5 +1,6 @@
 import GameCard from "../GameCard/GameCard";
 import SearchBar from "../SearchBar/SearchBar"
+import PropTypes from "prop-types"
 import "./GamesContainer.css"
 
 const GamesContainer = ({ fightingGames, searchForGame, searchedGames, foundSearchResults }) => {
@@ -38,3 +39,14 @@ const GamesContainer = ({ fightingGames, searchForGame, searchedGames, foundSear
 }
 
 export default GamesContainer
+
+GamesContainer.propTypes = {
+  fightingGames: PropTypes.array.isRequired,
+  searchForGame: PropTypes.func.isRequired,
+  searchedGames: PropTypes.array.isRequired,
+  foundSearchResults: PropTypes.bool.isRequired,
+}
+
+GamesContainer.defaultProps = {
+  foundSearchResults: false
+}
