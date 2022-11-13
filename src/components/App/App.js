@@ -44,7 +44,6 @@ const App = () => {
 
   const searchForGame = (input) => {
     const locateGame = fightingGames.filter(game => game.name.toUpperCase().includes(input.toUpperCase()))
-    console.log(locateGame)
     if(!input || !locateGame.length) {
       setSearchedGames([])
       setfoundSearchResults(false)
@@ -60,7 +59,8 @@ const App = () => {
         <section>
             {errorMessage && <p>Sorry, a {errorMessage} error has occured :(</p>}  {/* <ErrorPage /> */}
             <Switch>
-              <Route exact path="/" render={()=> <GamesContainer fightingGames={fightingGames} searchForGame={searchForGame}/>} />
+              <Route exact path="/" render={()=> <GamesContainer fightingGames={fightingGames}
+                searchedGames={searchedGames} foundSearchResults={foundSearchResults} searchForGame={searchForGame}/>} />
               <Route exact path="/:slug" render={({ match }) => <SingleGame id={match.params.slug}/>} />
               {/* <LoadingPage /> */}
               {/* <ErrorPage /> */}
