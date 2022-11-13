@@ -67,7 +67,7 @@ const App = () => {
         <Header />
         <section>
             {loadingScreenRender()}
-            {errorMessage && <ErrorPage errorMessage={errorMessage}/>}
+            {errorMessage && <ErrorPage />}
             <Switch>
               <Route exact path="/" render={()=> <GamesContainer fightingGames={fightingGames}
                 searchedGames={searchedGames} foundSearchResults={foundSearchResults} searchForGame={searchForGame}/>} />
