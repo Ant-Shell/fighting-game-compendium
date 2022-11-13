@@ -9,6 +9,8 @@ import './App.css';
 
 const App = () => {
   const [fightingGames, setFightingGames] = useState([])
+  const [searchedGames, setSearchedGames] = useState([])
+  const [foundSearchResults, setfoundSearchResults] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
 
   useEffect(() => {
@@ -40,22 +42,32 @@ const App = () => {
     .then(dataObject => setFightingGames(dataObject))
   }, [])
 
+  const searchForGame = (input) => {
+    const locateGame = fightingGames.filter(game => game.name.toUpperCase().includes(input.toUpperCase()))
+    if(!input || !locateGame.length) {
+      setSearchedGames([])
+      setfoundSearchResults(false)
+    } else {
+      setSearchedGames(locateGame)
+      setfoundSearchResults(true)
+    }
+  }
+
   return(
     <main>
-      <section className='page-container'>
         <Header />
-        <div className='content-wrapper'>
-          {errorMessage && <p>Sorry, a {errorMessage} error has occured :(</p>}  {/* <ErrorPage /> */}
-          <Switch>
-            <Route exact path="/" render={()=> <GamesContainer fightingGames={fightingGames}/>} />
-            <Route exact path="/:slug" render={({ match }) => <SingleGame id={match.params.slug}/>} />
-            {/* <LoadingPage /> */}
-            {/* <ErrorPage /> */}
-            {/* <InvalidLink /> */}
-          </Switch>
-        </div>
+        <section>
+            {errorMessage && <p>Sorry, a {errorMessage} error has occured :(</p>}  {/* <ErrorPage /> */}
+            <Switch>
+              <Route exact path="/" render={()=> <GamesContainer fightingGames={fightingGames}
+                searchedGames={searchedGames} foundSearchResults={foundSearchResults} searchForGame={searchForGame}/>} />
+              <Route exact path="/:slug" render={({ match }) => <SingleGame id={match.params.slug}/>} />
+              {/* <LoadingPage /> */}
+              {/* <ErrorPage /> */}
+              {/* <InvalidLink /> */}
+            </Switch>
+          </section>
         <Footer />
-      </section>
     </main>
   )
 }

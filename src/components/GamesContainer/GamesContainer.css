@@ -3,6 +3,11 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
-  height: 50em;
+  height: 45em;
   overflow-y: auto;
+}
+
+.search-conatainer {
+  display: flex;
+  justify-content: flex-end;
 }

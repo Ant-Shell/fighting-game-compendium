@@ -1,0 +1,11 @@
+form {
+  margin-right: 10vw;
+}
+
+input {
+  width: 10vw;
+}
+
+.error-message {
+  color: #F8F9FA;
+}

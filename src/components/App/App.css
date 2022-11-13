@@ -5,12 +5,3 @@ html {
 main {
   text-align: center;
 }
-
-.page-container {
-  position: relative;
-  min-height: 100vh;
-}
-
-.content-wrapper {
-  padding-bottom: 2.5rem;
-}
