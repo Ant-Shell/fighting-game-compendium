@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./SearchBar.css"
 
-const SearchBar = ({ searchForGame }) => {
+const SearchBar = ({ searchForGame, foundSearchResults }) => {
   const [userInput, setUserInput] = useState('')
 
   // function that calls setUserInput and also
@@ -17,6 +17,12 @@ const SearchBar = ({ searchForGame }) => {
     searchForGame(event)
   }
 
+  const errorRender = () => {
+    if (!foundSearchResults && userInput) {
+      return <p className="error-message">No Results Found.</p>
+    }
+  }
+
   return (
     <form>
       <input 
@@ -26,6 +32,7 @@ const SearchBar = ({ searchForGame }) => {
       value={userInput}
       onChange={(event) => searchAction(event.target.value)}
       />
+      {errorRender()}
     </form>
   )
 }
