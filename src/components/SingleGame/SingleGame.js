@@ -15,6 +15,7 @@ const SingleGame = ({ id }) => {
   }, [id])
 
   const listedInfoGetter1 = (listedInfo) => {
+    nullHandler(listedInfo)
     const listedInfoMapper = listedInfo.reduce((acc, info) => {
       if (acc.length > 1) {
         acc = acc + ', ' + info.name
@@ -27,6 +28,7 @@ const SingleGame = ({ id }) => {
   }
 
   const listedInfoGetter2 = (listedInfo) => {
+    nullHandler(listedInfo)
     const listedInfoMapper = listedInfo.reduce((acc, info) => {
       if (acc.length > 1) {
         acc = acc + ', ' + info.platform.name
@@ -40,9 +42,16 @@ const SingleGame = ({ id }) => {
 
   const ratingGetter = (listedInfo) => {
     if(listedInfo === null) {
-      return <p>Please visit: <a href="https://www.esrb.org/" target="_blank" rel="noopener noreferrer">esrb.org</a>.</p>
+      return <p>Please visit: <a href="https://www.esrb.org/" target="_blank" rel="noopener noreferrer">esrb.org</a></p>
     }
     return listedInfo.name
+  }
+
+  const nullHandler = (listedInfo) => {
+    if(listedInfo === null || listedInfo === '') {
+      return <p className="missing-info-notification">Unprovided</p>
+    }
+    return listedInfo
   }
 
   const errorChecker = () => {
@@ -56,13 +65,13 @@ const SingleGame = ({ id }) => {
           <SingleGameCard
             name={name}
             description_raw={description_raw}
-            metacritic={metacritic}
+            metacritic={nullHandler(metacritic)}
             released={released}
             platforms={listedInfoGetter2(platforms)}
             esrb_rating={ratingGetter(esrb_rating)}
             developers={listedInfoGetter1(developers)}
             publishers={listedInfoGetter1(publishers)}
-            website={website}
+            website={nullHandler(website)}
             background_image={background_image}
             key={id}
           />
