@@ -6,6 +6,7 @@ import LoadingPage from '../LoadingPage/LoadingPage';
 import ErrorPage from "../ErrorPage/ErrorPage"
 import GamesContainer from '../GamesContainer/GamesContainer';
 import SingleGame from '../SingleGame/SingleGame'
+import InvalidLink from '../InvalidLink/InvalidLink';
 import Footer from '../Footer/Footer';
 import './App.css';
 
@@ -66,12 +67,12 @@ const App = () => {
         <Header />
         <section>
             {loadingScreenRender()}
-            {errorMessage && <ErrorPage errorMessage={errorMessage}/>}
+            {errorMessage && <ErrorPage />}
             <Switch>
               <Route exact path="/" render={()=> <GamesContainer fightingGames={fightingGames}
                 searchedGames={searchedGames} foundSearchResults={foundSearchResults} searchForGame={searchForGame}/>} />
               <Route exact path="/:slug" render={({ match }) => <SingleGame id={match.params.slug}/>} />
-              {/* <InvalidLink /> */}
+              <Route path="*" render={() => <InvalidLink /> } />
             </Switch>
           </section>
         <Footer />

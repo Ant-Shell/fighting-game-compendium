@@ -1,8 +1,10 @@
 import "./ErrorPage.css"
 
-const ErrorPage = ({ errorMessage }) => {
+const ErrorPage = () => {
   return (
-    <p className="error-message">Sorry, a {errorMessage} error has occured :(</p>
+    <div className="error-container">
+    <p className="error-message">Sorry, an error has occured :(<br/>Please try again later.</p>
+    </div>
   )
 }
 

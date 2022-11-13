@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getGames } from "../../utilities/apiCalls"
 import SingleGameCard from "../SingleGameCard/SingleGameCard"
+import InvalidLink from "../InvalidLink/InvalidLink";
 import "./SingleGame.css"
 
 const SingleGame = ({ id }) => {
@@ -9,7 +10,7 @@ const SingleGame = ({ id }) => {
 
   useEffect(() => {
     setErrorMessage('')
-    getGames(id)
+    getGames(id, setErrorMessage)
     .then(dataObject => setFightingGame([dataObject]))
   }, [id])
 
@@ -44,30 +45,36 @@ const SingleGame = ({ id }) => {
     return listedInfo.name
   }
 
-    const singleGameList = fightingGame.map(info => {
-      const { id, name, description_raw, metacritic, released, background_image,
-      website, platforms, developers, publishers, esrb_rating } = info
-      return (
-        <SingleGameCard
-          name={name}
-          description_raw={description_raw}
-          metacritic={metacritic}
-          released={released}
-          platforms={listedInfoGetter2(platforms)}
-          esrb_rating={ratingGetter(esrb_rating)}
-          developers={listedInfoGetter1(developers)}
-          publishers={listedInfoGetter1(publishers)}
-          website={website}
-          background_image={background_image}
-          key={id}
-        />
-      )
-    })
+  const errorChecker = () => {
+    if(errorMessage) {
+        return <InvalidLink />
+    } else {
+      const singleGameList = fightingGame.map(info => {
+        const { id, name, description_raw, metacritic, released, background_image,
+        website, platforms, developers, publishers, esrb_rating } = info
+        return (
+          <SingleGameCard
+            name={name}
+            description_raw={description_raw}
+            metacritic={metacritic}
+            released={released}
+            platforms={listedInfoGetter2(platforms)}
+            esrb_rating={ratingGetter(esrb_rating)}
+            developers={listedInfoGetter1(developers)}
+            publishers={listedInfoGetter1(publishers)}
+            website={website}
+            background_image={background_image}
+            key={id}
+          />
+        )
+     })
+     return singleGameList
+   }
+  }
 
   return (
     <div className="game-info-container">
-      {errorMessage && <p>Sorry, a {errorMessage} error has occured :(</p>}
-      {singleGameList}
+      {errorChecker()}
     </div>
   )
 }
