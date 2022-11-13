@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import PropTypes from "prop-types"
 import "./GameCard.css"
 
 const GameCard = ({ name, slug, background_image }) => {
@@ -13,3 +14,9 @@ const GameCard = ({ name, slug, background_image }) => {
 }
 
 export default GameCard
+
+GameCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  background_image: PropTypes.string.isRequired,
+}

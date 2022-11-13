@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getGames } from "../../utilities/apiCalls"
 import SingleGameCard from "../SingleGameCard/SingleGameCard"
 import InvalidLink from "../InvalidLink/InvalidLink";
+import PropTypes from "prop-types"
 import "./SingleGame.css"
 
 const SingleGame = ({ id }) => {
@@ -89,3 +90,7 @@ const SingleGame = ({ id }) => {
 }
 
 export default SingleGame
+
+SingleGame.propTypes = {
+  id: PropTypes.number.isRequired
+}
