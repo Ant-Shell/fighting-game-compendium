@@ -53,17 +53,23 @@ const App = () => {
     }
   }
 
+  const loadingScreenRender = () => {
+    if(!fightingGames.length && !errorMessage) {
+      return <p className='test'>Loading, please wait ...</p>
+    }
+  }
+
   return(
     <main>
         <Header />
         <section>
+            {loadingScreenRender()}
             {errorMessage && <p>Sorry, a {errorMessage} error has occured :(</p>}  {/* <ErrorPage /> */}
             <Switch>
               <Route exact path="/" render={()=> <GamesContainer fightingGames={fightingGames}
                 searchedGames={searchedGames} foundSearchResults={foundSearchResults} searchForGame={searchForGame}/>} />
               <Route exact path="/:slug" render={({ match }) => <SingleGame id={match.params.slug}/>} />
               {/* <LoadingPage /> */}
-              {/* <ErrorPage /> */}
               {/* <InvalidLink /> */}
             </Switch>
           </section>
