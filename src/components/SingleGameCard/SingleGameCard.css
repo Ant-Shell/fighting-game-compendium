@@ -1,12 +1,15 @@
 .single-card {
-  height: 100vh;
-  width: 100vw;
+  overflow-y: auto;
 }
 
 .info {
-  height: 80vh;
+  height: 125vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  font-weight: bold;
+  font-size: x-large;
+  color: #F8F9FA;
+  background-color: rgba(0, 15, 45, 0.7);
 }
