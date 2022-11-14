@@ -106,7 +106,7 @@ describe('All Games', () => {
     cy.get('[data-cy="website"]').contains("https://web.archive.org/web/19991008172715/http://smashbros.com/")
   })
 
-  it('can go back to all movies', () => {
+  it('can go back to all games', () => {
     cy.get('[data-cy="home-button"]').click()
     cy.url('http://localhost:3000')
   })

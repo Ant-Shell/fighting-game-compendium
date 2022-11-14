@@ -12,7 +12,7 @@ const SearchBar = ({ searchForGame, foundSearchResults }) => {
 
   const errorRender = () => {
     if (!foundSearchResults && userInput) {
-      return <p className="error-message">No Results Found.</p>
+      return <p className="error-message" data-cy='not-found-message'>No Results Found.</p>
     }
   }
 
@@ -23,6 +23,7 @@ const SearchBar = ({ searchForGame, foundSearchResults }) => {
       placeholder="Search Games"
       name="search"
       value={userInput}
+      data-cy='input'
       onChange={(event) => searchAction(event.target.value)}
       />
       {errorRender()}

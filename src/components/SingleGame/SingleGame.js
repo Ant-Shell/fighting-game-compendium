@@ -92,5 +92,8 @@ const SingleGame = ({ id }) => {
 export default SingleGame
 
 SingleGame.propTypes = {
-  id: PropTypes.number.isRequired
+  id: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ])
 }

@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
-  height: 45em;
+  height: 50em;
   overflow-y: auto;
 }
 

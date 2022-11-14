@@ -96,5 +96,7 @@ describe('All Games', () => {
     cy.get('[data-cy="card"]')
     .first()
     .click()
+    cy.viewport(1000, 1000)
+    cy.get('[data-cy="home-button"]').click()
   })
 })
