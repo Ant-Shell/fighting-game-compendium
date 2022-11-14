@@ -1,0 +1,235 @@
+{
+  "id": 54531,
+  "slug": "super-smash-bros-1999",
+  "name": "Super Smash Bros. (1999)",
+  "name_original": "Super Smash Bros. (1999)",
+  "description": "<p>Super Smash Bros. is a fighting video game developed by HAL Laboratory and published by Nintendo for the Nintendo 64 home video game console. It was released in Japan on January 21, 1999; in North America on April 26, 1999; and in Europe on November 19, 1999. Super Smash Bros. is the first game in the Super Smash Bros. series.<br />\nThe game is a crossover between many different Nintendo franchises, including Mario, The Legend of Zelda, Star Fox, Donkey Kong, Metroid, Mother, F-Zero, Yoshi, Kirby, and Pokémon. It presents a cast of characters and locations from these franchises and allows players to use each character&#39;s unique skill sets and even take advantage of the stage&#39;s offensive events to inflict damage, recover health, and ultimately attempt to knock opponent characters off the stage.<br />\nIt received mostly positive reviews from the media and was commercially successful, selling over 5 million copies worldwide by 2001, with 2.93 million sold in the United States and 1.97 million copies sold in Japan. It was given an Editors&#39; Choice award from IGN for the &quot;Best Fighting Game&quot;. Super Smash Bros. was commercially successful, and became a Nintendo 64 Player&#39;s Choice title. Its successor, Super Smash Bros. Melee, was released for the GameCube in 2001. The game spawned a series of sequels for each successive Nintendo console.</p>",
+  "metacritic": 79,
+  "metacritic_platforms": [
+      {
+          "metascore": 79,
+          "url": "https://www.metacritic.com/game/nintendo-64/super-smash-bros",
+          "platform": {
+              "platform": 83,
+              "name": "Nintendo 64",
+              "slug": "nintendo-64"
+          }
+      }
+  ],
+  "released": "1999-01-21",
+  "tba": false,
+  "updated": "2022-11-02T19:20:56",
+  "background_image": "https://media.rawg.io/media/games/e56/e56d68182f04f90a31068da55ba91ee4.jpg",
+  "background_image_additional": "https://media.rawg.io/media/screenshots/745/7454652437e26a173295e127c4fd50fa.jpg",
+  "website": "https://web.archive.org/web/19991008172715/http://smashbros.com/",
+  "rating": 4.22,
+  "rating_top": 4,
+  "ratings": [
+      {
+          "id": 4,
+          "title": "recommended",
+          "count": 122,
+          "percent": 58.94
+      },
+      {
+          "id": 5,
+          "title": "exceptional",
+          "count": 68,
+          "percent": 32.85
+      },
+      {
+          "id": 3,
+          "title": "meh",
+          "count": 14,
+          "percent": 6.76
+      },
+      {
+          "id": 1,
+          "title": "skip",
+          "count": 3,
+          "percent": 1.45
+      }
+  ],
+  "reactions": {
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "6": 1,
+      "8": 1,
+      "11": 1
+  },
+  "added": 402,
+  "added_by_status": {
+      "yet": 4,
+      "owned": 89,
+      "beaten": 231,
+      "toplay": 21,
+      "dropped": 55,
+      "playing": 2
+  },
+  "playtime": 0,
+  "screenshots_count": 8,
+  "movies_count": 0,
+  "creators_count": 5,
+  "achievements_count": 0,
+  "parent_achievements_count": 0,
+  "reddit_url": "https://www.reddit.com/r/ssb64",
+  "reddit_name": "Super Smash Bros 64",
+  "reddit_description": "This is a community to enjoy all things related to Super Smash Bros 64!!",
+  "reddit_logo": "https://b.thumbs.redditmedia.com/V-uH2_eGgEzTu62NHQN_KFHJ0FNgWhXgx8APo0_bgOM.png",
+  "reddit_count": 299,
+  "twitch_count": 0,
+  "youtube_count": 417241,
+  "reviews_text_count": 4,
+  "ratings_count": 203,
+  "suggestions_count": 226,
+  "alternative_names": [
+      "Nintendo All Star! Dairantō Smash Brothers",
+      "Super Smash Bros. 64",
+      "ニンテンドウオールスター! 大乱闘スマッシュブラザーズ"
+  ],
+  "metacritic_url": "https://www.metacritic.com/game/nintendo-64/super-smash-bros",
+  "parents_count": 0,
+  "additions_count": 0,
+  "game_series_count": 5,
+  "user_game": null,
+  "reviews_count": 207,
+  "saturated_color": "0f0f0f",
+  "dominant_color": "0f0f0f",
+  "parent_platforms": [
+      {
+          "platform": {
+              "id": 7,
+              "name": "Nintendo",
+              "slug": "nintendo"
+          }
+      }
+  ],
+  "platforms": [
+      {
+          "platform": {
+              "id": 11,
+              "name": "Wii",
+              "slug": "wii",
+              "image": null,
+              "year_end": null,
+              "year_start": null,
+              "games_count": 2314,
+              "image_background": "https://media.rawg.io/media/games/693/693952316d4b90984a92e7ab0f5c9b81.jpg"
+          },
+          "released_at": "1999-01-21",
+          "requirements": {}
+      },
+      {
+          "platform": {
+              "id": 10,
+              "name": "Wii U",
+              "slug": "wii-u",
+              "image": null,
+              "year_end": null,
+              "year_start": null,
+              "games_count": 1236,
+              "image_background": "https://media.rawg.io/media/games/275/2759da6fcaa8f81f21800926168c85f6.jpg"
+          },
+          "released_at": "1999-01-21",
+          "requirements": {}
+      },
+      {
+          "platform": {
+              "id": 83,
+              "name": "Nintendo 64",
+              "slug": "nintendo-64",
+              "image": null,
+              "year_end": null,
+              "year_start": null,
+              "games_count": 363,
+              "image_background": "https://media.rawg.io/media/games/5a1/5a145fe3002fc988140f7f00edcb9715.jpg"
+          },
+          "released_at": "1999-01-21",
+          "requirements": {}
+      }
+  ],
+  "stores": [],
+  "developers": [
+      {
+          "id": 14505,
+          "name": "HAL Laboratory",
+          "slug": "hal-laboratory",
+          "games_count": 61,
+          "image_background": "https://media.rawg.io/media/screenshots/7d5/7d5ad1326497d1533461a4541afb32f3.jpg"
+      }
+  ],
+  "genres": [
+      {
+          "id": 4,
+          "name": "Action",
+          "slug": "action",
+          "games_count": 166558,
+          "image_background": "https://media.rawg.io/media/games/b7d/b7d3f1715fa8381a4e780173a197a615.jpg"
+      },
+      {
+          "id": 40,
+          "name": "Casual",
+          "slug": "casual",
+          "games_count": 41454,
+          "image_background": "https://media.rawg.io/media/games/a44/a444a7628bdb49b24d06a7672f805814.jpg"
+      },
+      {
+          "id": 6,
+          "name": "Fighting",
+          "slug": "fighting",
+          "games_count": 11362,
+          "image_background": "https://media.rawg.io/media/games/e9a/e9a782a3f40f0e53ab64c7018251053e.jpg"
+      }
+  ],
+  "tags": [
+      {
+          "id": 31,
+          "name": "Singleplayer",
+          "slug": "singleplayer",
+          "language": "eng",
+          "games_count": 190705,
+          "image_background": "https://media.rawg.io/media/games/8d6/8d69eb6c32ed6acfd75f82d532144993.jpg"
+      },
+      {
+          "id": 7,
+          "name": "Multiplayer",
+          "slug": "multiplayer",
+          "language": "eng",
+          "games_count": 33748,
+          "image_background": "https://media.rawg.io/media/games/15c/15c95a4915f88a3e89c821526afe05fc.jpg"
+      },
+      {
+          "id": 5944,
+          "name": "fighting-game",
+          "slug": "fighting-game",
+          "language": "eng",
+          "games_count": 35,
+          "image_background": "https://media.rawg.io/media/screenshots/f84/f8422185f9a301414a3e58a0eb540e63.jpg"
+      },
+      {
+          "id": 54224,
+          "name": "smash 64",
+          "slug": "smash-64",
+          "language": "eng",
+          "games_count": 1,
+          "image_background": "https://media.rawg.io/media/games/e56/e56d68182f04f90a31068da55ba91ee4.jpg"
+      }
+  ],
+  "publishers": [
+      {
+          "id": 10681,
+          "name": "Nintendo",
+          "slug": "nintendo",
+          "games_count": 1218,
+          "image_background": "https://media.rawg.io/media/games/6f8/6f846e941c78cfbabe53cd67e55ced83.jpg"
+      }
+  ],
+  "esrb_rating": {
+      "id": 1,
+      "name": "Everyone",
+      "slug": "everyone"
+  },
+  "clip": null,
+  "description_raw": "Super Smash Bros. is a fighting video game developed by HAL Laboratory and published by Nintendo for the Nintendo 64 home video game console. It was released in Japan on January 21, 1999; in North America on April 26, 1999; and in Europe on November 19, 1999. Super Smash Bros. is the first game in the Super Smash Bros. series.\nThe game is a crossover between many different Nintendo franchises, including Mario, The Legend of Zelda, Star Fox, Donkey Kong, Metroid, Mother, F-Zero, Yoshi, Kirby, and Pokémon. It presents a cast of characters and locations from these franchises and allows players to use each character's unique skill sets and even take advantage of the stage's offensive events to inflict damage, recover health, and ultimately attempt to knock opponent characters off the stage.\nIt received mostly positive reviews from the media and was commercially successful, selling over 5 million copies worldwide by 2001, with 2.93 million sold in the United States and 1.97 million copies sold in Japan. It was given an Editors' Choice award from IGN for the \"Best Fighting Game\". Super Smash Bros. was commercially successful, and became a Nintendo 64 Player's Choice title. Its successor, Super Smash Bros. Melee, was released for the GameCube in 2001. The game spawned a series of sequels for each successive Nintendo console."
+}
