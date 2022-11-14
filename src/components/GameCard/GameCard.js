@@ -5,7 +5,7 @@ import "./GameCard.css"
 const GameCard = ({ name, slug, background_image }) => {
   return(
       <Link to={`/${slug}`}>
-      <div className="card">
+      <div className="card" data-cy='card'>
         <h2>{name}</h2>
         <img src={background_image} alt={`${name} poster`}></img>
       </div>

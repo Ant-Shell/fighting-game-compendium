@@ -4,7 +4,7 @@ import "./InvalidLink.css"
 const InvalidLink = () => {
   return (
     <div className="error-container">
-    <p className="error-message">Page Not Found :(</p>
+    <p className="error-message" data-cy='invalid-link'>Page Not Found :(</p>
     <Link to="/"><button>Continue?</button></Link>
     </div>
   )

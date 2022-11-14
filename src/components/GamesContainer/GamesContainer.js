@@ -31,7 +31,7 @@ const GamesContainer = ({ fightingGames, searchForGame, searchedGames, foundSear
       <div className="search-conatainer">
         <SearchBar fightingGames={fightingGames} searchForGame={searchForGame} foundSearchResults={foundSearchResults}/>
       </div>
-      <div className='games-container'>
+      <div className='games-container' data-cy='games-container'>
         {fightingGamesList}
       </div>
     </section>
