@@ -38,7 +38,7 @@
 
 ## About The Project
 
-[![FGC Demo][product-demo]](https://user-images.githubusercontent.com/100455148/201762569-83112c05-aff1-4c39-b879-a9017f395582.gif)
+[![FGC Demo][select-demo]](https://user-images.githubusercontent.com/100455148/201763141-1077134f-8bdd-49c9-8383-3e10f2bceadf.gif)
 
 This web application was built with the intent of introducing gamers and non-gamers to the world of fighting games. It provides information about some of the most popular games in the genre, with the intent of adding even more features!
 
