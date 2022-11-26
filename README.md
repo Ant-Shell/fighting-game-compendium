@@ -90,6 +90,7 @@ This project was completed on a timeline of roughly five days. It was to demonst
 
 ## Roadmap
 
+- [ ] Responsiveness for a better viewing experience
 - [ ] Video clips for each game
 - [ ] Screenshots for each game
 - [ ] Tournament information for individual games
