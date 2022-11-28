@@ -26,6 +26,7 @@ workflows:
   test_my_app:
     jobs:
       - cypress/run:
+          yarn: true
           start: npm start
           wait-on: 'http://localhost:3000'
       - build_and_test
