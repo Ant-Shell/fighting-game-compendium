@@ -25,9 +25,10 @@ jobs:
 workflows:
   test_my_app:
     jobs:
+      - cypress/install:
+          install-command: npm install cypress
       - cypress/run:
           executor: cypress/base-14
-          yarn: true
           start: npm start
           wait-on: 'http://localhost:3000'
       - build_and_test
